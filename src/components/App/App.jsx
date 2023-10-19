@@ -1,7 +1,8 @@
-import "./App.css";
+import CarList from "../CarList/CarList";
+// import "./App.css";
 
 function App() {
-  return <>Hello</>;
+  return <CarList />;
 }
 
 export default App;
