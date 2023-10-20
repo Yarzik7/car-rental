@@ -7,9 +7,9 @@ const useFetchAdverts = (page) => {
   const [responseLength, setResponseLength] = useState(0);
 
   useEffect(() => {
-    const responseResolved = (newImages) => {
-      setFetchedData((prevValue) => [...prevValue, ...newImages]);
-      setResponseLength(newImages.length);
+    const responseResolved = (newAdverts) => {
+      setFetchedData((prevValue) => [...prevValue, ...newAdverts]);
+      setResponseLength(newAdverts.length);
     };
 
     const responseRejected = (error) => {

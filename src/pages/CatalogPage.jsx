@@ -1,16 +1,12 @@
 import { useState } from "react";
 import CarList from "../components/CarList/CarList";
 import LoadMore from "../components/LoadMore/LoadMore";
-import { useLocalStorage, useFetchAdverts } from "../hooks";
+import { useFetchAdverts, useLocalStorage } from "../hooks";
 
 const CatalogPage = () => {
   const [page, setPage] = useState(1);
-  const { data: adverts, responseLength, error } = useFetchAdverts(page);
   const [ids, setIds] = useLocalStorage("ids", []);
-
-  console.log("pages: ", page);
-  console.log("items: ", adverts);
-  console.log("errors: ", error);
+  const { data: adverts, responseLength } = useFetchAdverts(page);
 
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);

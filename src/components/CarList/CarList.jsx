@@ -8,8 +8,7 @@ const CarList = ({ items }) => {
   const checkIncludes = (value) => ids.includes(value);
 
   const toggleFavorite = (id) => {
-    const idx = ids.indexOf(id);
-    if (idx === -1) {
+    if (!~ids.indexOf(id)) {
       setIds((prevValue) => [...prevValue, id]);
       return;
     }
