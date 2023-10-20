@@ -17,7 +17,7 @@ import { useState } from "react";
 import icons from "../../assets/images/icons/icons.svg";
 import { generateAdvertParamsArray } from "../../utils/generateAdvertParamsArray";
 
-const CarItem = ({ carInfo, favorite = false }) => {
+const CarItem = ({ carInfo, favorite = false, toggleFavorite }) => {
   const [showModal, setShowModal] = useState(false);
 
   const { img, model, rentalPrice, make, year } = carInfo;
@@ -30,7 +30,7 @@ const CarItem = ({ carInfo, favorite = false }) => {
       <CarItemContentBox>
         <CarImageContainerStyled>
           <CarImage src={img} alt={model} />
-          <FavoriteChangeButton>
+          <FavoriteChangeButton onClick={() => toggleFavorite(carInfo.id)}>
             <FavoriteIconStyled favorite={favorite}>
               <use xlinkHref={`${icons}#icon-heart`}></use>
             </FavoriteIconStyled>
