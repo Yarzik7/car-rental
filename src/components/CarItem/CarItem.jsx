@@ -10,6 +10,7 @@ import {
   CarItemContentBox,
 } from "./CarItem.styled";
 import Modal from "../Modal/Modal";
+import ModalContainer from "../Modal/ModalContainer/ModalContainer";
 import PopUpContent from "./PopUpContent/PopUpContent";
 import AdvertParams from "../AdvertParams/AdvertParams";
 import { useState } from "react";
@@ -37,7 +38,9 @@ const CarItem = ({ carInfo, favorite = false }) => {
         </CarImageContainerStyled>
 
         <DescriptionContainerStyled>
-          <AdvertHeaderStyled>{make} <span>{model}</span>, {year}</AdvertHeaderStyled>
+          <AdvertHeaderStyled>
+            {make} <span>{model}</span>, {year}
+          </AdvertHeaderStyled>
           <p>{rentalPrice}</p>
         </DescriptionContainerStyled>
 
@@ -51,7 +54,9 @@ const CarItem = ({ carInfo, favorite = false }) => {
 
         {showModal && (
           <Modal onClose={toggleModal}>
-            <PopUpContent carInfo={carInfo} />
+            <ModalContainer onClose={toggleModal}>
+              <PopUpContent carInfo={carInfo} />
+            </ModalContainer>
           </Modal>
         )}
       </CarItemContentBox>
