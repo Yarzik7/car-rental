@@ -4,11 +4,11 @@ import {
 } from "./BurgerButton.styled";
 import icons from "../../../assets/images/icons/icons.svg";
 
-const BurgerButton = ({onClick}) => {
+const BurgerButton = ({ onClick }) => {
   return (
     <BurgerButtonStyled onClick={onClick}>
       <BurgerButtonIconStyled>
-        <use xlinkHref={`${icons}#icon-heart`}></use>
+        <use xlinkHref={`${icons}#icon-menu`}></use>
       </BurgerButtonIconStyled>
     </BurgerButtonStyled>
   );

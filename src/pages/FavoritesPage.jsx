@@ -1,5 +1,7 @@
+import CarList from "../components/CarList/CarList";
+
 const FavoritesPage = () => {
-  return <h1>FavoritePage</h1>;
+  return <CarList />;
 };
 
 export default FavoritesPage;

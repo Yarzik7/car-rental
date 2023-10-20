@@ -8,8 +8,8 @@ const BurgerButtonStyled = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
   margin: 0;
   padding: 0;
 
@@ -18,13 +18,25 @@ const BurgerButtonStyled = styled.button`
 
   outline: none;
   cursor: pointer;
+
+  & svg {
+    fill: #000;
+    stroke: #000;
+  }
+
+  & svg:hover,
+  & svg:focus {
+    fill: #0b44cd;
+    stroke: #0b44cd;
+  }
 `;
 
 const BurgerButtonIconStyled = styled.svg`
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
 
-  stroke: #000;
+  stroke: currentColor;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
 `;
 
 export { BurgerButtonStyled, BurgerButtonIconStyled };

@@ -14,6 +14,7 @@ function App() {
         <Route index element={<HomePage />}></Route>
         <Route path="Catalog" element={<CatalogPage />}></Route>
         <Route path="Favorite" element={<FavoritesPage />}></Route>
+        <Route path="*" element={<HomePage />}></Route>
       </Route>
     </Routes>
   );

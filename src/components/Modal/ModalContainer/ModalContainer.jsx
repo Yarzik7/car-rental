@@ -3,7 +3,7 @@ import {
   ModalContainerStyled,
   CloseIconStyled,
 } from "./ModalContainer.styled";
-import icons from "../../assets/images/icons/icons.svg";
+import icons from "../../../assets/images/icons/icons.svg";
 
 const ModalContainer = ({ children, onClose }) => {
   return (
