@@ -55,20 +55,17 @@ const DescriptionContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+`;
 
+const AdvertHeaderStyled = styled.h3`
   font-weight: 500;
   line-height: 1.5;
 
   color: #121417;
 `;
 
-const AdvertParams = styled.p`
+const AdvertParamsContainerStyled = styled.div`
   margin-bottom: 28px;
-
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: rgba(18, 20, 23, 0.5);
 `;
 
 export {
@@ -78,5 +75,6 @@ export {
   FavoriteChangeButton,
   CarImage,
   DescriptionContainerStyled,
-  AdvertParams,
+  AdvertParamsContainerStyled,
+  AdvertHeaderStyled,
 };

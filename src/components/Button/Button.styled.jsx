@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 const ButtonStyled = styled.button`
+  display: flex;
   justify-content: center;
   align-items: center;
   width: ${({ styles }) => `${styles.width}`};
@@ -25,4 +26,6 @@ const ButtonStyled = styled.button`
   }
 `;
 
-export { ButtonStyled };
+const LinkButtonStyled = ButtonStyled.withComponent("a");
+
+export { ButtonStyled, LinkButtonStyled };
