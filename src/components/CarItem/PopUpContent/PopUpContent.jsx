@@ -5,7 +5,6 @@ import {
   CarParamsHeaderStyled,
   RentalConditionParam,
   RentalConditionContainerStyled,
-  RentalNumberValue,
 } from "./PopUpContent.styled";
 import { AdvertHeaderStyled } from "../CarItem.styled";
 import Button from "../../Button/Button";
@@ -36,7 +35,9 @@ const PopUpContent = ({ carInfo }) => {
       </ImageContainerStyled>
 
       <div>
-        <AdvertHeaderStyled>{`${make} ${model}, ${year}`}</AdvertHeaderStyled>
+        <AdvertHeaderStyled>
+          {make} <span>{model}</span>, {year}
+        </AdvertHeaderStyled>
         <AdvertParams marginBottom={4}>
           {paramsArray[0].join(" | ")}
         </AdvertParams>
@@ -59,7 +60,7 @@ const PopUpContent = ({ carInfo }) => {
         <RentalConditionContainerStyled>
           <RentalConditionParam>
             {minAge.match(/([a-zA-Z\s:]+)/)[0]}
-            <RentalNumberValue>{minAge.match(/(\d+)/)[0]}</RentalNumberValue>
+            <span>{minAge.match(/(\d+)/)[0]}</span>
           </RentalConditionParam>
           <RentalConditionParam>{license}</RentalConditionParam>
         </RentalConditionContainerStyled>
@@ -68,15 +69,11 @@ const PopUpContent = ({ carInfo }) => {
           <RentalConditionParam>{required}</RentalConditionParam>
           <RentalConditionParam>
             {"Mileage: "}
-            <RentalNumberValue>
-              {mileage.toLocaleString("en-US")}
-            </RentalNumberValue>
+            <span>{mileage.toLocaleString("en-US")}</span>
           </RentalConditionParam>
           <RentalConditionParam>
             {"Price: "}
-            <RentalNumberValue>
-              {rentalPrice.match(/(\d+)/)[0] + "$"}
-            </RentalNumberValue>
+            <span>{rentalPrice.match(/(\d+)/)[0] + "$"}</span>
           </RentalConditionParam>
         </RentalConditionContainerStyled>
       </div>

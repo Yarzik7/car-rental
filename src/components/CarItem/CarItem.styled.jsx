@@ -1,12 +1,21 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 const CarItemStyled = styled.li`
-  width: 274px;
+  flex-basis: calc((100% - 3 * 29px) / 4);
+`;
+
+const CarItemContentBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 const CarImageContainerStyled = styled.div`
   position: relative;
 
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 268px;
   margin-bottom: 14px;
@@ -51,17 +60,28 @@ const FavoriteIconStyled = styled.svg`
   stroke: ${({ favorite }) => (favorite ? "#3470FF" : "#fff")};
 `;
 
+const descriptionMixin = css`
+  font-weight: 500;
+  line-height: 1.5;
+  color: #121417;
+`;
+
 const DescriptionContainerStyled = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+  flex-grow: 1;
+
+  ${descriptionMixin}
 `;
 
 const AdvertHeaderStyled = styled.h3`
-  font-weight: 500;
-  line-height: 1.5;
+  font-size: 16px;
+  ${descriptionMixin}
 
-  color: #121417;
+  & > span {
+    color: #3470ff;
+  }
 `;
 
 const AdvertParamsContainerStyled = styled.div`
@@ -77,4 +97,5 @@ export {
   DescriptionContainerStyled,
   AdvertParamsContainerStyled,
   AdvertHeaderStyled,
+  CarItemContentBox,
 };

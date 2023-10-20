@@ -7,7 +7,7 @@ import {
   CarImage,
   DescriptionContainerStyled,
   AdvertHeaderStyled,
-  AdvertParamsContainerStyled,
+  CarItemContentBox,
 } from "./CarItem.styled";
 import Modal from "../Modal/Modal";
 import PopUpContent from "./PopUpContent/PopUpContent";
@@ -26,33 +26,35 @@ const CarItem = ({ carInfo, favorite = false }) => {
 
   return (
     <CarItemStyled>
-      <CarImageContainerStyled>
-        <CarImage src={img} alt={model} />
-        <FavoriteChangeButton>
-          <FavoriteIconStyled favorite={favorite}>
-            <use xlinkHref={`${icons}#icon-heart`}></use>
-          </FavoriteIconStyled>
-        </FavoriteChangeButton>
-      </CarImageContainerStyled>
+      <CarItemContentBox>
+        <CarImageContainerStyled>
+          <CarImage src={img} alt={model} />
+          <FavoriteChangeButton>
+            <FavoriteIconStyled favorite={favorite}>
+              <use xlinkHref={`${icons}#icon-heart`}></use>
+            </FavoriteIconStyled>
+          </FavoriteChangeButton>
+        </CarImageContainerStyled>
 
-      <DescriptionContainerStyled>
-        <AdvertHeaderStyled>{`${make} ${model}, ${year}`}</AdvertHeaderStyled>
-        <p>{rentalPrice}</p>
-      </DescriptionContainerStyled>
+        <DescriptionContainerStyled>
+          <AdvertHeaderStyled>{make} <span>{model}</span>, {year}</AdvertHeaderStyled>
+          <p>{rentalPrice}</p>
+        </DescriptionContainerStyled>
 
-      <AdvertParams marginBottom={28}>{paramsArray.join(" | ")}</AdvertParams>
+        <AdvertParams marginBottom={28}>{paramsArray.join(" | ")}</AdvertParams>
 
-      <Button
-        caption="Learn more"
-        styles={{ width: "100%", height: "44px" }}
-        onClick={toggleModal}
-      />
+        <Button
+          caption="Learn more"
+          styles={{ width: "100%", height: "44px" }}
+          onClick={toggleModal}
+        />
 
-      {showModal && (
-        <Modal onClose={toggleModal}>
-          <PopUpContent carInfo={carInfo} />
-        </Modal>
-      )}
+        {showModal && (
+          <Modal onClose={toggleModal}>
+            <PopUpContent carInfo={carInfo} />
+          </Modal>
+        )}
+      </CarItemContentBox>
     </CarItemStyled>
   );
 };

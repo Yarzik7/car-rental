@@ -1,3 +1,7 @@
-const Section = ({ children }) => {};
+import { SectionStyled } from "./Section.styled";
 
-export { Section };
+const Section = ({ children }) => {
+  return <SectionStyled>{children}</SectionStyled>;
+};
+
+export default Section;

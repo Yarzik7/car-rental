@@ -18,8 +18,11 @@ const AdvertHeaderStyled = styled.h3`
   font-size: 18px;
   font-weight: 500;
   line-height: 1.33;
-
   color: #121417;
+
+  & > span {
+    color: #3470ff;
+  }
 `;
 
 const CarDescriptionTextStyled = styled.p`
@@ -50,14 +53,14 @@ const RentalConditionParam = styled.p`
   line-height: 1.5;
   letter-spacing: -0.24px;
   color: #363535;
-`;
 
-const RentalNumberValue = styled.span`
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: -0.24px;
-  color: #3470ff;
+  & > span {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    color: #3470ff;
+  }
 `;
 
 export {
@@ -68,5 +71,4 @@ export {
   CarParamsHeaderStyled,
   RentalConditionContainerStyled,
   RentalConditionParam,
-  RentalNumberValue,
 };
