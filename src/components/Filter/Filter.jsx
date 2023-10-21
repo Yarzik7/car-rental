@@ -1,14 +1,42 @@
-import { SelectStyled, OptionStyled } from "./Filter.styled";
+import { FilterContainerStyled } from "./Filter.styled";
+import Select from "../Select/Select";
+import { useState, useEffect } from "react";
 
-const Filter = () => {
+import { createPricesArray } from "../../utils/createPricesArray";
+import carBrands from "../../data/carBrands.json";
+
+const Filter = ({ getFilter }) => {
+  const [brand, setBrand] = useState("");
+  const [price, setPrice] = useState("");
+  const [fromMileage, setFromMileage] = useState("");
+  const [toMileage, setToMileage] = useState("");
+
+  useEffect(() => {
+    getFilter({ brand, price });
+  }, [price, brand, getFilter]);
+
   return (
-    <div>
-      <SelectStyled placeholder="Enter the text">
-        <OptionStyled value="option1">Option 1</OptionStyled>
-        <OptionStyled value="option2">Option 2</OptionStyled>
-        <OptionStyled value="option3">Option 3</OptionStyled>
-      </SelectStyled>
-    </div>
+    <FilterContainerStyled>
+      <Select
+        placeholder={brand || "Enter the text"}
+        width="224px"
+        label="Car brand"
+        firstOptText={"All"}
+        firstOptValue={""}
+        options={carBrands}
+        getValue={setBrand}
+      />
+
+      <Select
+        placeholder={price || "To $"}
+        width="125px"
+        label="Price/ 1 hour"
+        firstOptText="All"
+        firstOptValue=""
+        options={createPricesArray({ amount: 50, step: 10 })}
+        getValue={setPrice}
+      />
+    </FilterContainerStyled>
   );
 };
 
