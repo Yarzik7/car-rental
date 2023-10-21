@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CarList from "../components/CarList/CarList";
 import LoadMore from "../components/LoadMore/LoadMore";
+import Filter from "../components/Filter/Filter";
 import { useFetchAdverts, useLocalStorage } from "../hooks";
 
 const CatalogPage = () => {
@@ -14,6 +15,7 @@ const CatalogPage = () => {
 
   return (
     <>
+      <Filter />
       <CarList items={adverts} />
       {!(responseLength < 8) && <LoadMore onClick={handleLoadMore} />}
     </>
