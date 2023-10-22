@@ -6,11 +6,40 @@ const SelectContainerStyled = styled.div`
   height: 48px;
 `;
 
-// const SelectStyled = styled.input`
+export const TestDiv = styled.div`
+  position: relative;
+`
+
+const SelectStyled = styled.input`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 18px;
+
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary-text-color);
+
+  border-radius: 14px;
+  background-color: var(--bg-select-color);
+  border: none;
+
+  cursor: pointer;
+  outline: none;
+
+  &::placeholder {
+    color: var(--primary-text-color);
+  }
+`;
+
+// const SelectStyled = styled.button`
+//   position: relative;
+
 //   display: flex;
 //   align-items: center;
-//   width: 100%;
-//   height: 100%;
+//   width: ${({ width }) => width};
+//   height: 48px;
 //   padding: 0 18px;
 
 //   font-size: 18px;
@@ -25,28 +54,8 @@ const SelectContainerStyled = styled.div`
 //   outline: none;
 // `;
 
-const SelectStyled = styled.button`
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  width: ${({ width }) => width};
-  height: 48px;
-  padding: 0 18px;
-
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--primary-text-color);
-
-  border-radius: 14px;
-  background-color: var(--bg-select-color);
-  border: none;
-
-  cursor: pointer;
-  outline: none;
-`;
-
 const SelectLabelStyled = styled.label`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;

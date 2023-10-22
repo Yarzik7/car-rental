@@ -1,28 +1,31 @@
-import { useEffect, useState } from "react";
-import CarList from "../components/CarList/CarList";
-import LoadMore from "../components/LoadMore/LoadMore";
-import Filter from "../components/Filter/Filter";
-import { useFetchAdverts, useLocalStorage } from "../hooks";
+import { useEffect, useState } from 'react';
+import CarList from '../components/CarList/CarList';
+import LoadMore from '../components/LoadMore/LoadMore';
+import Filter from '../components/Filter/Filter';
+import { useFetchAdverts } from '../hooks';
 
 const CatalogPage = () => {
   const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState('');
   const [filteredAdverts, setFilteredAdverts] = useState([]);
   const { data: adverts, responseLength } = useFetchAdverts(page);
 
   useEffect(() => {
-    setFilteredAdverts(
-      adverts.filter(
-        ({ make, rentalPrice }) =>
-          (make.includes(filter.brand) &&
-            Number(rentalPrice.match(/(\d+)/)[0]) <= filter.price) ||
-          !filter.price
-      )
-    );
+    setFilteredAdverts(filterAdverts(adverts, filter));
   }, [filter, adverts]);
 
+  function filterAdverts(adverts, filterOptions) {
+    const { brand, price } = filterOptions;
+
+    return adverts.filter(({ make, rentalPrice }) => {
+      if (brand && make.toLowerCase() !== brand.toLowerCase()) return false;
+      if (price && rentalPrice.match(/(\d+)/)[0] > price) return false;
+      return true;
+    });
+  }
+
   const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
+    setPage(prevPage => prevPage + 1);
   };
 
   return (
