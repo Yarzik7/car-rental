@@ -4,6 +4,8 @@ import {
   MileageLabel,
   ToMileageInputStyled,
   MileageBoxStyled,
+  MileageInputBoxStyled,
+  MileageInputCaptionStyled,
 } from './Filter.styled';
 import Select from '../Select/Select';
 import Button from '../Button/Button';
@@ -18,25 +20,27 @@ const Filter = ({ getFilter }) => {
   const [fromMileage, setFromMileage] = useState('');
   const [toMileage, setToMileage] = useState('');
 
-  const onSearch = () => getFilter({ brand, price });
+  const onSearch = () => getFilter({ brand, price, toMileage, fromMileage });
 
   const onChange = ({ target: { name, value } }) => {
+    value = value && Number(value.replaceAll(',', ''));
     switch (name) {
       case 'fromMileage':
-        setFromMileage(value.replace(',', ''));
+        setFromMileage(value);
         return;
       case 'toMileage':
-        setToMileage(value.replace(',', ''));
+        setToMileage(value);
         return;
       default:
         return;
     }
   };
 
-  const onKeyPress = evt => {
+  const onKeyDown = ({ key, preventDefault }) => {
     const pattern = /[0-9]/;
-    if (!pattern.test(evt.key) && evt.key !== 'Backspace') {
-      evt.preventDefault();
+    if (!pattern.test(key) && key !== 'Backspace' && key !== 'ArrowRight' && key !== 'ArrowLeft') {
+      console.log(key);
+      preventDefault();
     }
   };
 
@@ -63,14 +67,21 @@ const Filter = ({ getFilter }) => {
       <MileageBoxStyled>
         <MileageLabel>
           {'Car mileage / km'}
-          <FromMileageInputStyled
-            name="fromMileage"
-            onKeyDown={onKeyPress}
-            value={Number(fromMileage).toLocaleString('en-US')}
-            onChange={onChange}
-          />
+          <MileageInputBoxStyled>
+            {' '}
+            <FromMileageInputStyled
+              name="fromMileage"
+              onKeyDown={onKeyDown}
+              value={fromMileage.toLocaleString('en-US')}
+              onChange={onChange}
+            />
+            <MileageInputCaptionStyled>From</MileageInputCaptionStyled>
+          </MileageInputBoxStyled>
         </MileageLabel>
-        <ToMileageInputStyled name="toMileage" value={Number(toMileage).toLocaleString('en-US')} onChange={onChange} />
+        <MileageInputBoxStyled>
+          <ToMileageInputStyled name="toMileage" value={toMileage.toLocaleString('en-US')} onChange={onChange} />
+          <MileageInputCaptionStyled>To</MileageInputCaptionStyled>
+        </MileageInputBoxStyled>
       </MileageBoxStyled>
       <Button caption={'Search'} styles={{ width: '136px', height: '48px' }} onClick={onSearch} />
     </FilterContainerStyled>
