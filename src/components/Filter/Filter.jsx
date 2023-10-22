@@ -36,11 +36,12 @@ const Filter = ({ getFilter }) => {
     }
   };
 
-  const onKeyDown = ({ key, preventDefault }) => {
+  const onKeyDown = evt => {
+    const { key } = evt;
     const pattern = /[0-9]/;
     if (!pattern.test(key) && key !== 'Backspace' && key !== 'ArrowRight' && key !== 'ArrowLeft') {
       console.log(key);
-      preventDefault();
+      evt.preventDefault();
     }
   };
 
@@ -68,7 +69,6 @@ const Filter = ({ getFilter }) => {
         <MileageLabel>
           {'Car mileage / km'}
           <MileageInputBoxStyled>
-            {' '}
             <FromMileageInputStyled
               name="fromMileage"
               onKeyDown={onKeyDown}
