@@ -46,7 +46,7 @@ const Select = ({ width, placeholder, value, label, options, getValue, firstOptT
             {value}
           </SelectStyled>
 
-          <ChevronIconStyled>
+          <ChevronIconStyled isOptionsShow={isOptionsShow}>
             <use xlinkHref={`${icons}#icon-chevron`}></use>
           </ChevronIconStyled>
         </SelectContainerStyled>

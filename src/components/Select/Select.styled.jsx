@@ -52,8 +52,11 @@ const ChevronIconStyled = styled.svg`
   width: 20px;
   height: 20px;
 
+  transition: transform var(--timing-function) var(--transition-duration);
+  transform: ${({ isOptionsShow }) => isOptionsShow ? 'rotate(-180deg)' : 'rotate(0)'};
   stroke: var(--primary-text-color);
   fill: none;
+  cursor: pointer;
 `;
 
 const SelectListContainerStyled = styled.div`
