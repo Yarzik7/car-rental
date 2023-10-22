@@ -1,12 +1,12 @@
 import CarList from "../components/CarList/CarList";
 import { useState, useEffect } from "react";
-import { useFetchAdverts, useLocalStorage } from "../hooks";
+import { useLocalStorage } from "../hooks";
 import { getAdvertById } from "../utils/api/getAdvertById";
 
 const FavoritesPage = () => {
   const [favoriteAdverts, setFavoriteAdverts] = useState([]);
-  const [error, setError] = useState(null);
-  const [ids, setIds] = useLocalStorage("ids", []);
+  const [_, setError] = useState(null);
+  const [ids, _] = useLocalStorage("ids", []);
 
   console.log("fav: ", favoriteAdverts);
 
