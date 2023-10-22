@@ -1,22 +1,25 @@
 import CarList from '../components/CarList/CarList';
+import Filter from '../components/Filter/Filter';
 import { useState, useEffect } from 'react';
-import { useLocalStorage } from '../hooks';
+import { useLocalStorage, useAdvertFilter } from '../hooks';
 import { getAdvertById } from '../utils/api/getAdvertById';
 
 const FavoritesPage = () => {
   const [favoriteAdverts, setFavoriteAdverts] = useState([]);
-  // const [_, setError] = useState(null);
+  const { filteredAdverts, setFilter } = useAdvertFilter(favoriteAdverts);
+  const [, setError] = useState(null);
   const [ids] = useLocalStorage('ids', []);
 
   useEffect(() => {
     const responseResolved = fetchedData => {
-      const newFavoriteAdverts = fetchedData.filter(({ value }) => value).map(({ value }) => value);
+      const newFavoriteAdverts = fetchedData
+        .filter(({ value }) => value)
+        .map(({ value }) => value);
       setFavoriteAdverts(prevValue => [...prevValue, ...newFavoriteAdverts]);
     };
 
     const responseRejected = error => {
-      // setError(error);
-      console.log(error);
+      setError(error);
     };
 
     const getFavoriteAdverts = ids => {
@@ -27,7 +30,12 @@ const FavoritesPage = () => {
     getFavoriteAdverts(ids).then(responseResolved).catch(responseRejected);
   }, [ids]);
 
-  return <CarList items={favoriteAdverts} />;
+  return (
+    <>
+      <Filter getFilter={setFilter} />
+      <CarList items={filteredAdverts} />;
+    </>
+  );
 };
 
 export default FavoritesPage;

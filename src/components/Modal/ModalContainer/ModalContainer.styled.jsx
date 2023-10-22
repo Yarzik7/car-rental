@@ -11,6 +11,8 @@ const ModalContainerStyled = styled.div`
 
   background-color: var(--button-text-color);
   border-radius: 24px;
+
+  transform: scale(0.95);
 `;
 
 const CloseButtonStyled = styled.button`

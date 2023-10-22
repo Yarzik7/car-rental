@@ -1,5 +1,15 @@
 export const generateAdvertParamsArray = (
-  { address, rentalCompany, type, model, id, functionalities, year, fuelConsumption, engineSize },
+  {
+    address,
+    rentalCompany,
+    type,
+    model,
+    id,
+    functionalities,
+    year,
+    fuelConsumption,
+    engineSize,
+  },
   usingType = 'carItem'
 ) => {
   const [city, country] = address.split(',').slice(-2);
@@ -14,5 +24,6 @@ export const generateAdvertParamsArray = (
       [`Fuel Consumption: ${fuelConsumption}`, `Engine Size: ${engineSize}`],
     ],
   };
+
   return advertParams[usingType];
 };

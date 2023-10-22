@@ -1,4 +1,5 @@
-import { useLocalStorage } from "./useLocalStorage";
-import { useFetchAdverts } from "./useFetchAdverts";
+import { useLocalStorage } from './useLocalStorage';
+import { useFetchAdverts } from './useFetchAdverts';
+import { useAdvertFilter } from './useAdvertFilter';
 
-export { useFetchAdverts, useLocalStorage };
+export { useFetchAdverts, useLocalStorage, useAdvertFilter };

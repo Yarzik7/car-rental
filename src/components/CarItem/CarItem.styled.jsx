@@ -50,6 +50,11 @@ const FavoriteChangeButton = styled.button`
 
   cursor: pointer;
   outline: none;
+  transition: transform var(--timing-function) var(--transition-duration);
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 const FavoriteIconStyled = styled.svg`
@@ -57,7 +62,8 @@ const FavoriteIconStyled = styled.svg`
   height: 18px;
 
   fill: ${({ favorite }) => (favorite ? 'var(--accent-color)' : 'transparent')};
-  stroke: ${({ favorite }) => (favorite ? 'var(--accent-color)' : 'var(--heart-stroke-color)')};
+  stroke: ${({ favorite }) =>
+    favorite ? 'var(--accent-color)' : 'var(--heart-stroke-color)'};
 `;
 
 const descriptionMixin = css`

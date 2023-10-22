@@ -1,26 +1,24 @@
-import CarItem from "../CarItem/CarItem";
-import { CarListStyled } from "./CarList.styled";
-import { useLocalStorage } from "../../hooks";
+import CarItem from '../CarItem/CarItem';
+import { CarListStyled } from './CarList.styled';
+import { useLocalStorage } from '../../hooks';
 
 const CarList = ({ items }) => {
-  const [ids, setIds] = useLocalStorage("ids", []);
+  const [ids, setIds] = useLocalStorage('ids', []);
 
-  const checkIncludes = (value) => ids.includes(value);
+  const checkIncludes = value => ids.includes(value);
 
-  const toggleFavorite = (id) => {
+  const toggleFavorite = id => {
     if (!~ids.indexOf(id)) {
-      setIds((prevValue) => [...prevValue, id]);
+      setIds(prevValue => [...prevValue, id]);
       return;
     }
 
-    setIds((prevValue) =>
-      ids.filter((favoriteAdvertId) => favoriteAdvertId !== id)
-    );
+    setIds(ids.filter(favoriteAdvertId => favoriteAdvertId !== id));
   };
 
   return (
     <CarListStyled>
-      {items.map((car) => (
+      {items.map(car => (
         <CarItem
           key={car.id}
           carInfo={car}

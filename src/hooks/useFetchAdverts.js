@@ -16,10 +16,6 @@ const useFetchAdverts = (page) => {
       setError(error);
     };
 
-    // if (page === 1) {
-    //   setFetchedData([]);
-    // }
-
     getAdverts({ page, limit: 8 })
       .then(responseResolved)
       .catch(responseRejected);

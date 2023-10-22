@@ -67,7 +67,7 @@ const SelectListContainerStyled = styled.div`
   padding-right: 8px;
 
   border-radius: 14px;
-  border: 1px solid var(--secondary-text-color);
+  border: 1px solid var(--select-list-border);
   background-color: var(--button-text-color);
   box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
 

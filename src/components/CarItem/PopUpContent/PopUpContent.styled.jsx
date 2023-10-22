@@ -4,6 +4,7 @@ const ImageContainerStyled = styled.div`
   width: 100%;
   height: 248px;
 
+  background-color: var(--label-color);
   border-radius: 14px;
 
   overflow: hidden;
