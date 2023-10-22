@@ -26,9 +26,7 @@ const CatalogPage = () => {
     });
   }
 
-  const handleLoadMore = () => {
-    setPage(prevPage => prevPage + 1);
-  };
+  const handleLoadMore = () => setPage(prevPage => prevPage + 1);
 
   return (
     <>

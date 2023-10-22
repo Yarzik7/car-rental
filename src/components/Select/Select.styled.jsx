@@ -6,11 +6,11 @@ const SelectContainerStyled = styled.div`
   height: 48px;
 `;
 
-export const TestDiv = styled.div`
+const SelectMainContainerStyled = styled.div`
   position: relative;
-`
+`;
 
-const SelectStyled = styled.input`
+const SelectStyled = styled.button`
   display: flex;
   align-items: center;
   width: 100%;
@@ -26,33 +26,11 @@ const SelectStyled = styled.input`
   border: none;
 
   cursor: pointer;
-  outline: none;
 
   &::placeholder {
     color: var(--primary-text-color);
   }
 `;
-
-// const SelectStyled = styled.button`
-//   position: relative;
-
-//   display: flex;
-//   align-items: center;
-//   width: ${({ width }) => width};
-//   height: 48px;
-//   padding: 0 18px;
-
-//   font-size: 18px;
-//   font-weight: 500;
-//   color: var(--primary-text-color);
-
-//   border-radius: 14px;
-//   background-color: var(--bg-select-color);
-//   border: none;
-
-//   cursor: pointer;
-//   outline: none;
-// `;
 
 const SelectLabelStyled = styled.label`
   position: relative;
@@ -80,7 +58,7 @@ const ChevronIconStyled = styled.svg`
 
 const SelectListContainerStyled = styled.div`
   position: absolute;
-  top: 52px;
+  top: 78px;
   left: 0;
 
   width: 100%;
@@ -93,7 +71,7 @@ const SelectListContainerStyled = styled.div`
   background-color: var(--button-text-color);
   box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
 
-  z-index: 1;
+  z-index: 999;
 `;
 
 const SelectListStyled = styled.ul`
@@ -130,4 +108,5 @@ export {
   SelectListStyled,
   SelectListContainerStyled,
   SelectContainerStyled,
+  SelectMainContainerStyled,
 };

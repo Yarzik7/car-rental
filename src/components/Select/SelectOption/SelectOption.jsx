@@ -1,10 +1,10 @@
 import { SelectOptionStyled } from './SelectOption.styled';
 
-const SelectOption = ({ text, value, getValue, toggleOptionsShow }) => {
-  const onSelectOption = evt => {
+const SelectOption = ({ text, value, getValue, toggleOptionsShow, blur }) => {
+  const onSelectOption = () => {
     getValue(value);
-    console.log('select');
-    toggleOptionsShow(evt);
+    toggleOptionsShow();
+    blur();
   };
 
   return <SelectOptionStyled onClick={onSelectOption}>{text}</SelectOptionStyled>;

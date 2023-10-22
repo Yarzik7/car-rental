@@ -48,6 +48,7 @@ const Filter = ({ getFilter }) => {
     <FilterContainerStyled>
       <Select
         placeholder={brand || 'Enter the text'}
+        value={brand || 'Enter the text'}
         width="224px"
         label="Car brand"
         firstOptText={'All'}

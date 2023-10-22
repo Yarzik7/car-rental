@@ -5,7 +5,7 @@ import {
   SelectListStyled,
   SelectListContainerStyled,
   SelectContainerStyled,
-  TestDiv,
+  SelectMainContainerStyled,
 } from './Select.styled';
 import SelectOption from './SelectOption/SelectOption';
 import { useState, useRef } from 'react';
@@ -15,26 +15,36 @@ const Select = ({ width, placeholder, value, label, options, getValue, firstOptT
   const [isOptionsShow, setIsOptionsShow] = useState(false);
   const selectRef = useRef(null);
 
-  const toggleOptionsShow = evt => {
-    console.log('t: ', evt.target);
-    console.log('cT: ', evt.currentTarget);
-    setIsOptionsShow(value => !value);
+  const toggleOptionsShow = () => setIsOptionsShow(value => !value);
+
+  const blur = () => selectRef.current.blur();
+
+  const onFocusChange = focusFunction => () => setTimeout(focusFunction, 100);
+
+  const onSelectFocus = () => setIsOptionsShow(true);
+
+  const onSelectBlur = () => setIsOptionsShow(false);
+
+  const onSelectClick = e => {
+    e.currentTarget === e.target && toggleOptionsShow();
+    isOptionsShow && blur();
   };
 
-  console.log(isOptionsShow);
   return (
-    <TestDiv>
+    <SelectMainContainerStyled>
       <SelectLabelStyled>
         {label}
         <SelectContainerStyled width={width}>
           <SelectStyled
             ref={selectRef}
-            readOnly
-            value={value}
-            onClick={evt => toggleOptionsShow(evt)}
-            // onBlur={() => setIsOptionsShow(false)}
+            tabIndex={0}
+            onClick={onSelectClick}
+            onFocus={onFocusChange(onSelectFocus)}
+            onBlur={onFocusChange(onSelectBlur)}
             placeholder={placeholder}
-          />
+          >
+            {value}
+          </SelectStyled>
 
           <ChevronIconStyled>
             <use xlinkHref={`${icons}#icon-chevron`}></use>
@@ -51,6 +61,7 @@ const Select = ({ width, placeholder, value, label, options, getValue, firstOptT
               value={firstOptValue}
               getValue={getValue}
               toggleOptionsShow={toggleOptionsShow}
+              blur={blur}
             />
             {options.map((option, idx) => (
               <SelectOption
@@ -59,128 +70,14 @@ const Select = ({ width, placeholder, value, label, options, getValue, firstOptT
                 value={option}
                 getValue={getValue}
                 toggleOptionsShow={toggleOptionsShow}
+                blur={blur}
               />
             ))}
           </SelectListStyled>
         </SelectListContainerStyled>
       )}
-    </TestDiv>
+    </SelectMainContainerStyled>
   );
 };
 
 export default Select;
-
-// return (
-//   <SelectLabelStyled>
-//     {label}
-//     <SelectStyled
-//       width={width}
-//       ref={selectRef}
-//       onFocus={() => setIsOptionsShow(true)}
-//       onBlur={() => setIsOptionsShow(false)}
-//     >
-//       {placeholder}
-//       <ChevronIconStyled>
-//         <use xlinkHref={`${icons}#icon-chevron`}></use>
-//       </ChevronIconStyled>
-
-//       {isOptionsShow && (
-//         <SelectListContainerStyled>
-//           <SelectListStyled>
-//             {options.map((option, idx) => (
-//               <SelectOption
-//                 key={idx}
-//                 text={option}
-//                 value={option}
-//                 getValue={getValue}
-//                 toggleOptionsShow={toggleOptionsShow}
-//               />
-//             ))}
-//           </SelectListStyled>
-//         </SelectListContainerStyled>
-//       )}
-//     </SelectStyled>
-//   </SelectLabelStyled>
-// );
-
-// return (
-//   <SelectLabelStyled>
-//     {label}
-//     <SelectContainerStyled width={width}>
-//       <SelectStyled
-//         ref={selectRef}
-//         readOnly
-//         onFocus={() => setIsOptionsShow(true)}
-//         placeholder={placeholder}
-//       />
-//       <ChevronIconStyled>
-//         <use xlinkHref={`${icons}#icon-chevron`}></use>
-//       </ChevronIconStyled>
-//       {isOptionsShow && (
-//         <SelectListContainerStyled>
-//           <SelectListStyled>
-//             {options.map((option, idx) => (
-//               <SelectOption
-//                 key={idx}
-//                 text={option}
-//                 value={option}
-//                 getValue={getValue}
-//                 toggleOptionsShow={toggleOptionsShow}
-//                 blur={blur}
-//               />
-//             ))}
-//           </SelectListStyled>
-//         </SelectListContainerStyled>
-//       )}
-//     </SelectContainerStyled>
-//   </SelectLabelStyled>
-// );
-
-// return (
-//   <SelectLabelStyled>
-//     {label}
-//     <SelectStyled
-//       width={width}
-//       ref={selectRef}
-//       // onFocus={() => {
-//       //   console.log("onFocus");
-//       //   setIsOptionsShow(true);
-//       // }}
-//       onClick={evt => {
-//         console.log('click');
-//         toggleOptionsShow(evt);
-//       }}
-//       onBlur={() => {
-//         setIsOptionsShow(false);
-//       }}
-//     >
-//       {placeholder}
-//       <ChevronIconStyled>
-//         <use xlinkHref={`${icons}#icon-chevron`}></use>
-//       </ChevronIconStyled>
-
-//       {isOptionsShow && (
-//         <SelectListContainerStyled>
-//           <SelectListStyled>
-//             <SelectOption
-//               key={0}
-//               text={firstOptText}
-//               value={firstOptValue}
-//               getValue={getValue}
-//               toggleOptionsShow={setIsOptionsShow}
-//             />
-//             {options.map((option, idx) => (
-//               <SelectOption
-//                 key={++idx}
-//                 text={option}
-//                 value={option}
-//                 getValue={getValue}
-//                 toggleOptionsShow={setIsOptionsShow}
-//               />
-//             ))}
-//           </SelectListStyled>
-//         </SelectListContainerStyled>
-//       )}
-//     </SelectStyled>
-//   </SelectLabelStyled>
-// );
