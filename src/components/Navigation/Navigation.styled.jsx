@@ -23,7 +23,8 @@ const NavLinkStyled = styled(NavLink)`
 
   border-radius: 10px;
 
-  transition: background-color var(--timing-function) var(--transition-duration);
+  transition: background-color var(--timing-function) var(--transition-duration),
+    color var(--timing-function) var(--transition-duration);
 
   &:hover,
   &:focus {
