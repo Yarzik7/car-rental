@@ -40,7 +40,6 @@ const Filter = ({ getFilter }) => {
     const { key } = evt;
     const pattern = /[0-9]/;
     if (!pattern.test(key) && key !== 'Backspace' && key !== 'ArrowRight' && key !== 'ArrowLeft') {
-      console.log(key);
       evt.preventDefault();
     }
   };
@@ -56,8 +55,10 @@ const Filter = ({ getFilter }) => {
         options={carBrands}
         getValue={setBrand}
       />
+
       <Select
-        placeholder={price || 'To $'}
+        placeholder={'To $'}
+        value={`To ${price}$`}
         width="125px"
         label="Price/ 1 hour"
         firstOptText="All"
@@ -65,6 +66,7 @@ const Filter = ({ getFilter }) => {
         options={createPricesArray({ amount: 50, step: 10 })}
         getValue={setPrice}
       />
+
       <MileageBoxStyled>
         <MileageLabel>
           {'Car mileage / km'}
@@ -78,11 +80,13 @@ const Filter = ({ getFilter }) => {
             <MileageInputCaptionStyled>From</MileageInputCaptionStyled>
           </MileageInputBoxStyled>
         </MileageLabel>
+
         <MileageInputBoxStyled>
           <ToMileageInputStyled name="toMileage" value={toMileage.toLocaleString('en-US')} onChange={onChange} />
           <MileageInputCaptionStyled>To</MileageInputCaptionStyled>
         </MileageInputBoxStyled>
       </MileageBoxStyled>
+
       <Button caption={'Search'} styles={{ width: '136px', height: '48px' }} onClick={onSearch} />
     </FilterContainerStyled>
   );

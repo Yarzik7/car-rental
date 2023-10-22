@@ -5,13 +5,13 @@ import {
   SelectListStyled,
   SelectListContainerStyled,
   SelectContainerStyled,
-  TestDiv
+  TestDiv,
 } from './Select.styled';
 import SelectOption from './SelectOption/SelectOption';
 import { useState, useRef } from 'react';
 import icons from '../../assets/images/icons/icons.svg';
 
-const Select = ({ width, placeholder, label, options, getValue, firstOptText, firstOptValue }) => {
+const Select = ({ width, placeholder, value, label, options, getValue, firstOptText, firstOptValue }) => {
   const [isOptionsShow, setIsOptionsShow] = useState(false);
   const selectRef = useRef(null);
 
@@ -30,15 +30,18 @@ const Select = ({ width, placeholder, label, options, getValue, firstOptText, fi
           <SelectStyled
             ref={selectRef}
             readOnly
+            value={value}
             onClick={evt => toggleOptionsShow(evt)}
             // onBlur={() => setIsOptionsShow(false)}
             placeholder={placeholder}
           />
+
           <ChevronIconStyled>
             <use xlinkHref={`${icons}#icon-chevron`}></use>
           </ChevronIconStyled>
         </SelectContainerStyled>
       </SelectLabelStyled>
+
       {isOptionsShow && (
         <SelectListContainerStyled>
           <SelectListStyled>
