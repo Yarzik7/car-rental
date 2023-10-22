@@ -6,12 +6,9 @@ import { useFetchAdverts, useLocalStorage } from "../hooks";
 
 const CatalogPage = () => {
   const [page, setPage] = useState(1);
-  const [ids, setIds] = useLocalStorage("ids", []);
   const [filter, setFilter] = useState("");
   const [filteredAdverts, setFilteredAdverts] = useState([]);
   const { data: adverts, responseLength } = useFetchAdverts(page);
-
-  console.log("filter: ", filter);
 
   useEffect(() => {
     setFilteredAdverts(
