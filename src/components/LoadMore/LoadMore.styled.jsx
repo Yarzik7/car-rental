@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const LoadMoreStyled = styled.button`
   display: block;
@@ -8,7 +8,7 @@ const LoadMoreStyled = styled.button`
   font-weight: 500;
   line-height: 1.5;
   text-decoration-line: underline;
-  color: #3470ff;
+  color: var(--accent-color);
 
   background-color: transparent;
   border: none;

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const ModalContainerStyled = styled.div`
   position: relative;
@@ -9,7 +9,7 @@ const ModalContainerStyled = styled.div`
   max-width: 541px;
   padding: 40px;
 
-  background-color: #fff;
+  background-color: var(--button-text-color);
   border-radius: 24px;
 `;
 
@@ -33,12 +33,12 @@ const CloseButtonStyled = styled.button`
   outline: none;
 
   & svg {
-    stroke: #000;
+    stroke: var(--primary-text-color);
   }
 
   & svg:hover,
   & svg:focus {
-    stroke: #0b44cd;
+    stroke: var(--hover-color);
   }
 `;
 
@@ -47,7 +47,7 @@ const CloseIconStyled = styled.svg`
   height: 24px;
 
   stroke: currentColor;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  transition: stroke var(--timing-function) var(--transition-duration);
 `;
 
 export { ModalContainerStyled, CloseButtonStyled, CloseIconStyled };

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const FilterContainerStyled = styled.div`
   display: flex;
@@ -7,8 +7,4 @@ const FilterContainerStyled = styled.div`
   margin-bottom: 50px;
 `;
 
-const OptionStyled = styled.option`
-  background-color: #f9f9f9;
-`;
-
-export { FilterContainerStyled, OptionStyled };
+export { FilterContainerStyled };

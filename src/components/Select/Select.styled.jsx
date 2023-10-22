@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const SelectContainerStyled = styled.div`
   position: relative;
@@ -15,10 +15,10 @@ const SelectContainerStyled = styled.div`
 
 //   font-size: 18px;
 //   font-weight: 500;
-//   color: #121417;
+//   color: var(--primary-text-color);
 
 //   border-radius: 14px;
-//   background-color: #f7f7fb;
+//   background-color: var(--bg-select-color);
 //   border: none;
 
 //   cursor: pointer;
@@ -36,10 +36,10 @@ const SelectStyled = styled.button`
 
   font-size: 18px;
   font-weight: 500;
-  color: #121417;
+  color: var(--primary-text-color);
 
   border-radius: 14px;
-  background-color: #f7f7fb;
+  background-color: var(--bg-select-color);
   border: none;
 
   cursor: pointer;
@@ -54,7 +54,7 @@ const SelectLabelStyled = styled.label`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
-  color: #8a8a89;
+  color: var(--label-color);
 `;
 
 const ChevronIconStyled = styled.svg`
@@ -65,7 +65,7 @@ const ChevronIconStyled = styled.svg`
   width: 20px;
   height: 20px;
 
-  stroke: #121417;
+  stroke: var(--primary-text-color);
   fill: none;
 `;
 
@@ -80,8 +80,8 @@ const SelectListContainerStyled = styled.div`
   padding-right: 8px;
 
   border-radius: 14px;
-  border: 1px solid rgba(18, 20, 23, 0.05);
-  background-color: #fff;
+  border: 1px solid var(--secondary-text-color);
+  background-color: var(--button-text-color);
   box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
 
   z-index: 1;
@@ -106,11 +106,11 @@ const SelectListStyled = styled.ul`
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgba(18, 20, 23, 0.05);
+    background-color: var(--select-text-color);
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background-color: grey;
+    background-color: var(--label-color);
   }
 `;
 

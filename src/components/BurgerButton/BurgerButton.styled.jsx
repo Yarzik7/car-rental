@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const BurgerButtonStyled = styled.button`
   position: absolute;
@@ -20,14 +20,14 @@ const BurgerButtonStyled = styled.button`
   cursor: pointer;
 
   & svg {
-    fill: #000;
-    stroke: #000;
+    fill: var(--primary-text-color);
+    stroke: var(--primary-text-color);
   }
 
   & svg:hover,
   & svg:focus {
-    fill: #0b44cd;
-    stroke: #0b44cd;
+    fill: var(--hover-color);
+    stroke: var(--hover-color);
   }
 `;
 
@@ -36,7 +36,8 @@ const BurgerButtonIconStyled = styled.svg`
   height: 35px;
 
   stroke: currentColor;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  transition: fill var(--timing-function) var(--transition-duration),
+    stroke var(--timing-function) var(--transition-duration);
 `;
 
 export { BurgerButtonStyled, BurgerButtonIconStyled };

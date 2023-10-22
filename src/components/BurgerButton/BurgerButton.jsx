@@ -1,8 +1,5 @@
-import {
-  BurgerButtonStyled,
-  BurgerButtonIconStyled,
-} from "./BurgerButton.styled";
-import icons from "../../../assets/images/icons/icons.svg";
+import { BurgerButtonStyled, BurgerButtonIconStyled } from './BurgerButton.styled';
+import icons from '../../assets/images/icons/icons.svg';
 
 const BurgerButton = ({ onClick }) => {
   return (

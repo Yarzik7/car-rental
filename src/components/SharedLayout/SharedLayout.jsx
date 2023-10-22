@@ -1,5 +1,5 @@
 import { MainStyled, MainContentContainerStyled } from "./SharedLayout.styled";
-import BurgerButton from "../Header/BurgerButton/BurgerButton";
+import BurgerButton from "../BurgerButton/BurgerButton";
 import Section from "../Section/Section";
 import Container from "../Container/Container";
 import SideBar from "../SideBar/SideBar";

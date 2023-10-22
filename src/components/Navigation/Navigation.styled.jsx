@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 const NavStyled = styled.nav``;
 
@@ -19,19 +19,21 @@ const NavLinkStyled = styled(NavLink)`
   padding-bottom: 16px;
 
   font-size: 20px;
-  color: #000;
+  color: var(--primary-text-color);
 
   border-radius: 10px;
 
+  transition: background-color var(--timing-function) var(--transition-duration);
+
   &:hover,
   &:focus {
-    background-color: #0b44cd;
-    color: #fff;
+    background-color: var(--hover-color);
+    color: var(--button-text-color);
   }
 
   &.active {
-    background-color: #3470ff;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
   }
 `;
 

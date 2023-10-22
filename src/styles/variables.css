@@ -1,0 +1,16 @@
+:root {
+  --accent-color: #3470ff;
+  --hover-color: #0b44cd;
+  --primary-text-color: #121417;
+  --secondary-text-color: rgba(18, 20, 23, 0.5);
+  --scroll-color: rgba(18, 20, 23, 0.05);
+  --select-text-color: rgba(18, 20, 23, 0.2);
+  --heart-stroke-color: #ffffffcc;
+  --label-color: #8a8a89;
+  --button-text-color: #fff;
+  --condition-item-bg-color: #f9f9f9;
+  --condition-item-color: #363535;
+  --bg-select-color: #f7f7fb;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 350ms;
+}

@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 
 const CarItemStyled = styled.li`
   flex-basis: calc((100% - 3 * 29px) / 4);
@@ -21,7 +21,7 @@ const CarImageContainerStyled = styled.div`
   margin-bottom: 14px;
 
   border-radius: 14px;
-  background-color: grey;
+  background-color: var(--label-color);
 
   overflow: hidden;
 `;
@@ -56,14 +56,14 @@ const FavoriteIconStyled = styled.svg`
   width: 18px;
   height: 18px;
 
-  fill: ${({ favorite }) => (favorite ? "#3470FF" : "transparent")};
-  stroke: ${({ favorite }) => (favorite ? "#3470FF" : "#fff")};
+  fill: ${({ favorite }) => (favorite ? 'var(--accent-color)' : 'transparent')};
+  stroke: ${({ favorite }) => (favorite ? 'var(--accent-color)' : 'var(--heart-stroke-color)')};
 `;
 
 const descriptionMixin = css`
   font-weight: 500;
   line-height: 1.5;
-  color: #121417;
+  color: var(--primary-text-color);
 `;
 
 const DescriptionContainerStyled = styled.div`
@@ -80,7 +80,7 @@ const AdvertHeaderStyled = styled.h3`
   ${descriptionMixin}
 
   & > span {
-    color: #3470ff;
+    color: var(--accent-color);
   }
 `;
 

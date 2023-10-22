@@ -1,12 +1,8 @@
-import {
-  SideBarStyled,
-  CloseButtonStyled,
-  CloseIconStyled,
-} from "./SideBar.styled";
-import Navigation from "../Navigation/Navigation";
-import icons from "../../assets/images/icons/icons.svg";
+import { SideBarStyled, CloseButtonStyled, CloseIconStyled } from './SideBar.styled';
+import Navigation from '../Navigation/Navigation';
+import icons from '../../assets/images/icons/icons.svg';
 
-const SideBar = ({ onClose, showModal }) => {
+const SideBar = ({ onClose }) => {
   return (
     <SideBarStyled>
       <CloseButtonStyled onClick={onClose}>
@@ -15,7 +11,7 @@ const SideBar = ({ onClose, showModal }) => {
         </CloseIconStyled>
       </CloseButtonStyled>
 
-      <Navigation />
+      <Navigation onLinkClick={onClose} />
     </SideBarStyled>
   );
 };

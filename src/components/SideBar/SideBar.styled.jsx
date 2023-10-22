@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 const SideBarStyled = styled.aside`
   position: absolute;
@@ -9,7 +9,7 @@ const SideBarStyled = styled.aside`
   height: 100vh;
   padding: 50px 24px;
 
-  background-color: #fff;
+  background-color: var(--button-text-color);
 `;
 
 const CloseButtonStyled = styled.button`
@@ -32,12 +32,12 @@ const CloseButtonStyled = styled.button`
   outline: none;
 
   & svg {
-    stroke: #000;
+    stroke: var(--primary-text-color);
   }
 
   & svg:hover,
   & svg:focus {
-    stroke: #0b44cd;
+    stroke: var(--hover-color);
   }
 `;
 
@@ -46,7 +46,7 @@ const CloseIconStyled = styled.svg`
   height: 24px;
 
   stroke: currentColor;
-  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  transition: stroke var(--timing-function) var(--transition-duration);
 `;
 
 export { SideBarStyled, CloseButtonStyled, CloseIconStyled };
