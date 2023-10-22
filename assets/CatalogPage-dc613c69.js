@@ -1,4 +1,4 @@
-import{r,n as a,j as t,i as S}from"./index-0e6b31b1.js";import{g as v,u as m,C as w}from"./CarList-d3a0fd1f.js";const y=e=>{const[n,o]=r.useState([]),[l,s]=r.useState(null),[u,p]=r.useState(0);return r.useEffect(()=>{const x=i=>{o(h=>[...h,...i]),p(i.length)},c=i=>{s(i)};v({page:e,limit:8}).then(x).catch(c)},[e]),{data:n,error:l,responseLength:u}},j=a.button`
+import{r,n as a,j as t,i as S}from"./index-3dd5d1aa.js";import{g as v,u as m,C as w}from"./CarList-3624fcb5.js";const y=e=>{const[n,o]=r.useState([]),[l,s]=r.useState(null),[u,p]=r.useState(0);return r.useEffect(()=>{const x=i=>{o(h=>[...h,...i]),p(i.length)},c=i=>{s(i)};v({page:e,limit:8}).then(x).catch(c)},[e]),{data:n,error:l,responseLength:u}},j=a.button`
   display: block;
   margin: 0 auto;
   margin-top: 100px;

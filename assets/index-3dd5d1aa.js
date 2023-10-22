@@ -171,7 +171,8 @@ Error generating stack: `+i.message+`
 
   border-radius: 10px;
 
-  transition: background-color var(--timing-function) var(--transition-duration);
+  transition: background-color var(--timing-function) var(--transition-duration),
+    color var(--timing-function) var(--transition-duration);
 
   &:hover,
   &:focus {
@@ -195,4 +196,4 @@ Error generating stack: `+i.message+`
   align-items: center;
 
   background-color: var(--secondary-text-color);
-`,Qv=document.querySelector("#modal-root"),Kv=({children:e,onClose:t})=>{E.useEffect(()=>{const r=l=>{l.code==="Escape"&&t()};return window.addEventListener("keydown",r),()=>{window.removeEventListener("keydown",r)}},[t]);const n=r=>{r.target===r.currentTarget&&t()};return Pf.createPortal(O.jsx(Hv,{onClick:n,children:e}),Qv)},Yv=()=>{const[e,t]=E.useState(!1),n=()=>t(r=>!r);return O.jsxs(Pv,{children:[!e&&O.jsx(Lv,{onClick:n}),e&&O.jsx(Kv,{onClose:n,children:O.jsx(Wv,{onClose:n})}),O.jsx(_v,{children:O.jsx(zv,{children:O.jsx(Iv,{children:O.jsx(E.Suspense,{children:O.jsx(dm,{})})})})})]})};const cs=E.lazy(()=>ju(()=>import("./HomePage-083e93d5.js"),[])),Gv=E.lazy(()=>ju(()=>import("./CatalogPage-16b220a8.js"),["assets/CatalogPage-16b220a8.js","assets/CarList-d3a0fd1f.js"])),Xv=E.lazy(()=>ju(()=>import("./FavoritesPage-75e94a28.js"),["assets/FavoritesPage-75e94a28.js","assets/CarList-d3a0fd1f.js"]));function Zv(){return O.jsx(hm,{children:O.jsxs(Xt,{path:"/",element:O.jsx(Yv,{}),children:[O.jsx(Xt,{index:!0,element:O.jsx(cs,{})}),O.jsx(Xt,{path:"Catalog",element:O.jsx(Gv,{})}),O.jsx(Xt,{path:"Favorite",element:O.jsx(Xv,{})}),O.jsx(Xt,{path:"*",element:O.jsx(cs,{})})]})})}$i.createRoot(document.getElementById("root")).render(O.jsx(km,{basename:"/car-rental",children:O.jsx(Zv,{})}));export{Kv as M,Gf as i,O as j,ue as n,E as r,hv as s};
+`,Qv=document.querySelector("#modal-root"),Kv=({children:e,onClose:t})=>{E.useEffect(()=>{const r=l=>{l.code==="Escape"&&t()};return window.addEventListener("keydown",r),()=>{window.removeEventListener("keydown",r)}},[t]);const n=r=>{r.target===r.currentTarget&&t()};return Pf.createPortal(O.jsx(Hv,{onClick:n,children:e}),Qv)},Yv=()=>{const[e,t]=E.useState(!1),n=()=>t(r=>!r);return O.jsxs(Pv,{children:[!e&&O.jsx(Lv,{onClick:n}),e&&O.jsx(Kv,{onClose:n,children:O.jsx(Wv,{onClose:n})}),O.jsx(_v,{children:O.jsx(zv,{children:O.jsx(Iv,{children:O.jsx(E.Suspense,{children:O.jsx(dm,{})})})})})]})};const cs=E.lazy(()=>ju(()=>import("./HomePage-1b81207f.js"),[])),Gv=E.lazy(()=>ju(()=>import("./CatalogPage-dc613c69.js"),["assets/CatalogPage-dc613c69.js","assets/CarList-3624fcb5.js"])),Xv=E.lazy(()=>ju(()=>import("./FavoritesPage-a96abe63.js"),["assets/FavoritesPage-a96abe63.js","assets/CarList-3624fcb5.js"]));function Zv(){return O.jsx(hm,{children:O.jsxs(Xt,{path:"/",element:O.jsx(Yv,{}),children:[O.jsx(Xt,{index:!0,element:O.jsx(cs,{})}),O.jsx(Xt,{path:"Catalog",element:O.jsx(Gv,{})}),O.jsx(Xt,{path:"Favorite",element:O.jsx(Xv,{})}),O.jsx(Xt,{path:"*",element:O.jsx(cs,{})})]})})}$i.createRoot(document.getElementById("root")).render(O.jsx(km,{basename:"/car-rental",children:O.jsx(Zv,{})}));export{Kv as M,Gf as i,O as j,ue as n,E as r,hv as s};
