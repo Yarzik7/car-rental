@@ -13,6 +13,7 @@ const ImageContainerStyled = styled.div`
 const CarImageStyled = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 
 const AdvertHeaderStyled = styled.h3`
