@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.ecfda8fb.css",
-    "main.js": "/car-rental/static/js/main.0747380a.js",
+    "main.js": "/car-rental/static/js/main.09f965cf.js",
     "static/js/917.43feb66a.chunk.js": "/car-rental/static/js/917.43feb66a.chunk.js",
     "static/js/907.70d8edda.chunk.js": "/car-rental/static/js/907.70d8edda.chunk.js",
     "static/js/88.0ef637cd.chunk.js": "/car-rental/static/js/88.0ef637cd.chunk.js",
     "static/js/854.5082e686.chunk.js": "/car-rental/static/js/854.5082e686.chunk.js",
-    "static/js/330.ceb453df.chunk.js": "/car-rental/static/js/330.ceb453df.chunk.js",
+    "static/js/330.f3e6d1e0.chunk.js": "/car-rental/static/js/330.f3e6d1e0.chunk.js",
     "static/media/car-rental-bg.jpg": "/car-rental/static/media/car-rental-bg.c473d25823ed59a804c5.jpg",
     "static/media/manrope-500.ttf": "/car-rental/static/media/manrope-500.58fccc05dbdac5169469.ttf",
     "static/media/manrope-600.ttf": "/car-rental/static/media/manrope-600.cdbefcd69d8c4412063c.ttf",
@@ -17,15 +17,15 @@
     "static/media/icons.svg": "/car-rental/static/media/icons.9e853ae0ac94a950b245527b18066829.svg",
     "index.html": "/car-rental/index.html",
     "main.ecfda8fb.css.map": "/car-rental/static/css/main.ecfda8fb.css.map",
-    "main.0747380a.js.map": "/car-rental/static/js/main.0747380a.js.map",
+    "main.09f965cf.js.map": "/car-rental/static/js/main.09f965cf.js.map",
     "917.43feb66a.chunk.js.map": "/car-rental/static/js/917.43feb66a.chunk.js.map",
     "907.70d8edda.chunk.js.map": "/car-rental/static/js/907.70d8edda.chunk.js.map",
     "88.0ef637cd.chunk.js.map": "/car-rental/static/js/88.0ef637cd.chunk.js.map",
     "854.5082e686.chunk.js.map": "/car-rental/static/js/854.5082e686.chunk.js.map",
-    "330.ceb453df.chunk.js.map": "/car-rental/static/js/330.ceb453df.chunk.js.map"
+    "330.f3e6d1e0.chunk.js.map": "/car-rental/static/js/330.f3e6d1e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ecfda8fb.css",
-    "static/js/main.0747380a.js"
+    "static/js/main.09f965cf.js"
   ]
 }
